@@ -15,7 +15,7 @@ public class PlayerMotion : MonoBehaviour {
   public Vector3 Position { get => transform.position; set => transform.position = value; }
   public bool SameDirectionCommanded {
     get => (Mathf.Abs(Controls.WASD.x) < 0.1f && IsDucking) ||
-      (Mathf.Sign(Controls.WASD.x) == Mathf.Sign(Controls.WASD.x) &&
+      (Mathf.Sign(Controls.WASD.x) == Mathf.Sign(currentSpeed) &&
        (currentSpeed == 0? Mathf.Abs(Controls.WASD.x) < 0.1f: Mathf.Abs(Controls.WASD.x) > 0.1f));
   }
   public float CurrentAcceleration {
@@ -26,7 +26,6 @@ public class PlayerMotion : MonoBehaviour {
   public float timestampLastJump = -100;
   public Vector3 velocity;
   public float upAngle;
-  public float debug;
 
   [Header("Initialization")]
   public Rigidbody2D body;
@@ -46,7 +45,6 @@ public class PlayerMotion : MonoBehaviour {
   void OnCollisionStay2D (Collision2D c) {
     upAngle = Vector3.Angle(c.GetContact(0).normal, Vector3.up);
     isHorizontallyBlocked = upAngle > 54 && Mathf.Abs(c.relativeVelocity.x) >= 2;
-    debug = c.relativeVelocity.x;
   }
   void OnCollisionExit2D (Collision2D c) { upAngle = -1; }
 }

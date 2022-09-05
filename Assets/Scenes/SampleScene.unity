@@ -1350,7 +1350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHorizontalSpeed: 9
-  acceleration: 18
+  acceleration: 27
   decceleration: 9
   duckingAcceleration: 13.5
   jumpVelocity: 10
@@ -1359,7 +1359,6 @@ MonoBehaviour:
   timestampLastJump: -100
   velocity: {x: 0, y: 0, z: 0}
   upAngle: 0
-  debug: 0
   body: {fileID: 1837634678}
   stateMachine: {fileID: 1477812130}
 --- !u!1 &1871171889
