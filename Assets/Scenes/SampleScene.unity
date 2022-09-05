@@ -1351,7 +1351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHorizontalSpeed: 9
   acceleration: 27
-  decceleration: 9
+  decceleration: 18
   duckingAcceleration: 13.5
   jumpVelocity: 10
   currentSpeed: 0
